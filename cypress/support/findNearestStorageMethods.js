@@ -9,14 +9,6 @@ Cypress.Commands.add("fillInputLocation", (zipCode) => {
   fns.inputLocation().type(zipCode)
 })
 
-Cypress.Commands.add("validateInputLocation", (zipCode) => {
-    fns.inputLocation().should('contain.value', zipCode)
-  })
-
-Cypress.Commands.add("validateUnitSizeSelection", () => {
-    fns.unitSizeSelection().invoke('attr', 'checked').should('eq', 'checked')
-})
-
 Cypress.Commands.add("selectDropDownUnitSizeOption", (option) => {
   fns.dropDownUnitSize().click()
   fns.dropDownUnitSizeOption(option).click()
@@ -26,8 +18,12 @@ Cypress.Commands.add("clickButtonFindStorage", () => {
     fns.buttonFindStorage().click()
 })
 
+Cypress.Commands.add("validateInputLocation", (zipCode) => {
+  fns.inputLocation().should('contain.value', zipCode)
+})
+
 Cypress.Commands.add("validateUnitSizeSelection", (unitSize) => {
-    fns.unitSizeSelection(unitSize).invoke('attr', 'checked').should('eq', 'checked')
+  fns.unitSizeSelection(unitSize).invoke('attr', 'checked').should('eq', 'checked')
 })
 
 Cypress.Commands.add("validateRentNowCheckInTypeSelection", () => {
@@ -35,5 +31,5 @@ Cypress.Commands.add("validateRentNowCheckInTypeSelection", () => {
 })
 
 Cypress.Commands.add("validateRequireLocationMessage", () => {
-    fns.requireLocationMessage()
+    fns.requireLocationMessage().should('be.visible')
 })

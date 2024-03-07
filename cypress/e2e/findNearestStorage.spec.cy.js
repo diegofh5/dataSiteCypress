@@ -11,7 +11,7 @@ describe('Find Nearest Storage Facility Search Bar Tests', () => {
     let zipCode = '33195'
     let selectDropDownUnitSizeOption = 'Small (Storage Locker, 5x5, 5x10)'
     let unitSize = 'Small'
-    cy.clickOnTopMenuOption(menu, sub_menu)
+    cy.clickOnStorageTopMenuOption(menu, sub_menu)
     cy.valideStorageTypeOption()
     cy.fillInputLocation(zipCode)
     cy.selectDropDownUnitSizeOption(selectDropDownUnitSizeOption)

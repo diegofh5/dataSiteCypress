@@ -12,7 +12,7 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 
-Cypress.Commands.add("clickOnTopMenuOption", (menu, sub_menu=null) => {
+Cypress.Commands.add("clickOnStorageTopMenuOption", (menu, sub_menu=null) => {
     if(sub_menu == null){
         cy.get(`[href="/${menu}/"]`).contains(' Storage ').click()
     }else{
